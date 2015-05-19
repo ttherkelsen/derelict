@@ -1,0 +1,10 @@
+canvas.map {
+    background-color: #c0c0c0;
+    position: absolute;
+    z-index: 0;
+}
+
+canvas.mouse {
+    position: absolute;
+    z-index: 1;
+}
