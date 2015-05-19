@@ -3,11 +3,11 @@ Lowtek.util.ns('Lowtek.game');
 Lowtek.game.Map = function(mapData, objectType) {
     var me = this;
 
-    Lowtek.game.Core.call(me, objectType || "Map");
+    Lowtek.Core.call(me, objectType || "Map");
     me.load(mapData);
 };
 
-Lowtek.util.inherit(Lowtek.game.Map, Lowtek.game.Core);
+Lowtek.util.inherit(Lowtek.game.Map, Lowtek.Core);
 
 Lowtek.util.merge(Lowtek.game.Map.prototype, {
     load: function(mapData) {

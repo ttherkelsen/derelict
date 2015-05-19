@@ -4,11 +4,11 @@ Lowtek.util.ns('Lowtek.game');
 Lowtek.game.Task = function(objectType) {
     var me = this;
 
-    Lowtek.game.Core.call(me, objectType || "Task");
+    Lowtek.Core.call(me, objectType || "Task");
 };
 
 // Inheritance
-Lowtek.util.inherit(Lowtek.game.Task, Lowtek.game.Core);
+Lowtek.util.inherit(Lowtek.game.Task, Lowtek.Core);
 
 // Methods
 Lowtek.util.merge(Lowtek.game.Task.prototype, {

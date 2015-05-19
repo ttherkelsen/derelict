@@ -3,12 +3,12 @@ Lowtek.util.ns('Lowtek.game');
 Lowtek.game.Font = function(font, objectType) {
     var me = this;
 
-    Lowtek.game.Core.call(me, objectType || "Font");
+    Lowtek.Core.call(me, objectType || "Font");
     me.fontData = font;
     me.loadFont();
 };
 
-Lowtek.util.inherit(Lowtek.game.Font, Lowtek.game.Core);
+Lowtek.util.inherit(Lowtek.game.Font, Lowtek.Core);
 
 Lowtek.util.merge(Lowtek.game.Font.prototype, {
     loadFont: function() {

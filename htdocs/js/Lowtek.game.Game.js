@@ -4,10 +4,10 @@
 Lowtek.util.ns('Lowtek.game', 'Lowtek.runtime');
 
 Lowtek.game.Game = function(objectType) {
-    Lowtek.game.Core.call(this, objectType || 'Game');
+    Lowtek.Core.call(this, objectType || 'Game');
 };
 
-Lowtek.util.inherit(Lowtek.game.Game, Lowtek.game.Core);
+Lowtek.util.inherit(Lowtek.game.Game, Lowtek.Core);
 
 Lowtek.util.merge(Lowtek.game.Game.prototype, {
     // The id of the div tag that should end up containing the canvas

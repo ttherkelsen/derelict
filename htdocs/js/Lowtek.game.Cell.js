@@ -4,14 +4,14 @@ Lowtek.util.ns('Lowtek.game');
 Lowtek.game.Cell = function(pos, map, objectType) {
     var me = this;
 
-    Lowtek.game.Core.call(me, objectType || "Cell");
+    Lowtek.Core.call(me, objectType || "Cell");
     me.pos = pos;
     me.inventory = [];
     me.map = map
 };
 
 // Inheritance
-Lowtek.util.inherit(Lowtek.game.Cell, Lowtek.game.Core);
+Lowtek.util.inherit(Lowtek.game.Cell, Lowtek.Core);
 
 // Methods
 Lowtek.util.merge(Lowtek.game.Cell.prototype, {
