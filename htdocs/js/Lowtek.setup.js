@@ -4,3 +4,4 @@
 // last code to be run prior to onLoad event
 
 Lowtek.runtime.game = new Lowtek.game.Game();
+Lowtek.runtime.fontManager = new Lowtek.manager.Font();

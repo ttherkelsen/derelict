@@ -1,10 +1,10 @@
 Lowtek.util.ns('Lowtek.game');
 
 // Class / constructor
-Lowtek.game.Task = function(objectType) {
+Lowtek.game.Task = function(opts) {
     var me = this;
 
-    Lowtek.Core.call(me, objectType || "Task");
+    Lowtek.Core.call(me, opts);
 };
 
 // Inheritance

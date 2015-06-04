@@ -1,27 +1,26 @@
 Lowtek.util.ns('Lowtek.game');
 
-Lowtek.game.Map = function(mapData, objectType) {
+Lowtek.game.Map = function(opts) {
     var me = this;
 
-    Lowtek.Core.call(me, objectType || "Map");
-    me.load(mapData);
+    Lowtek.Core.call(me, opts);
+    me.load();
 };
 
 Lowtek.util.inherit(Lowtek.game.Map, Lowtek.Core);
 
 Lowtek.util.merge(Lowtek.game.Map.prototype, {
-    load: function(mapData) {
+    load: function() {
 	var me = this;
 
-	me.mapData = mapData;
 	var cells = [];
-	for (var y = 0; y < mapData.height; y++) {
-	    var row = mapData.data[y].split('');
-	    for (var x = 0; x < mapData.width; x++) {
-		var obj = mapData.objects[row[x]];
+	for (var y = 0; y < me.mapData.height; y++) {
+	    var row = me.mapData.data[y].split('');
+	    for (var x = 0; x < me.mapData.width; x++) {
+		var obj = me.mapData.objects[row[x]];
 
-		row[x] = new Lowtek.game.Cell({ x: x, y: y }, me);
-		row[x].addObject(new (mapData.defaultBackground)());
+		row[x] = new Lowtek.game.Cell({ pos: { x: x, y: y }, map: me });
+		row[x].addObject(new (me.mapData.defaultBackground)());
 		if (obj) {
 		    row[x].addObject(new (obj)());
 		}

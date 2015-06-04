@@ -3,8 +3,10 @@
 
 Lowtek.util.ns('Lowtek.game', 'Lowtek.runtime');
 
-Lowtek.game.Game = function(objectType) {
-    Lowtek.Core.call(this, objectType || 'Game');
+Lowtek.game.Game = function(opts) {
+    var me = this;
+    
+    Lowtek.Core.call(me, opts);
 };
 
 Lowtek.util.inherit(Lowtek.game.Game, Lowtek.Core);
@@ -50,7 +52,8 @@ Lowtek.util.merge(Lowtek.game.Game.prototype, {
 	me.canvasDivId = divId;
 	me.setupCanvas();
 
-	me.map = new Lowtek.game.Map(Lowtek.data.map.testmap);
+	/*
+	me.map = new Lowtek.game.Map({ map: Lowtek.data.map.testmap });
 
 	me.crew = new Lowtek.game.object.Crew();
 	var cell = me.map.getCellAt({ x: 14, y: 14 });
@@ -58,9 +61,17 @@ Lowtek.util.merge(Lowtek.game.Game.prototype, {
 
 	me.render(me.ctx);
 	me.renderMouseOverlay(me.mouseCtx);
-
+	*/
 	//var font = new Lowtek.game.Font(Lowtek.data.font.c64);
 	//me.canvasDiv.appendChild(font.canvas);
+	var cc = new Lowtek.gui.container.Column();
+	var tl = new Lowtek.gui.component.TextLabel({ text: 'Hello World' });
+	cc.addChild(tl);
+	tl = new Lowtek.gui.component.TextLabel({ text: 'The Small Fox Jumped Over' });
+	cc.addChild(tl);
+	cc.layout({ w: me.canvas.width, h: me.canvas.height });
+	var cv = cc.render({ w: me.canvas.width, h: me.canvas.height });
+	me.ctx.drawImage(cv, 0, 0);
 
     },
 
@@ -87,6 +98,7 @@ Lowtek.util.merge(Lowtek.game.Game.prototype, {
 	canvasDiv.addEventListener("mouseleave", me, false);
 	me.canvasDiv = canvasDiv;
 	me.mouseCtx = canvas.getContext("2d");
+	me.canvas = canvas;
     },
 
     screen2tile: function(x, y) {

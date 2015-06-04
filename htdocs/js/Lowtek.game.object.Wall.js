@@ -1,8 +1,10 @@
 Lowtek.util.ns('Lowtek.game.object');
 
 // Class / constructor
-Lowtek.game.object.Wall = function(pos, objectType) {
-    Lowtek.game.Object.call(this, pos, objectType || "Wall");
+Lowtek.game.object.Wall = function(opts) {
+    var me = this;
+    
+    Lowtek.game.Object.call(this, opts);
 };
 
 // Inheritance

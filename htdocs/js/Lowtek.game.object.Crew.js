@@ -1,9 +1,11 @@
 Lowtek.util.ns('Lowtek.game.object');
 
 // Class / constructor
-Lowtek.game.object.Crew = function(objectType) {
-    Lowtek.game.Object.call(this, objectType || "Crew");
-    Lowtek.runtime.game.registerSimulation(this);
+Lowtek.game.object.Crew = function(opts) {
+    var me = this;
+    
+    Lowtek.game.Object.call(me, opts);
+    Lowtek.runtime.game.registerSimulation(me);
 };
 
 // Inheritance

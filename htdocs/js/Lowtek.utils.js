@@ -2,7 +2,7 @@ Lowtek = {};
 Lowtek.util = {};
 
 Lowtek.DEBUG = true;
-Lowtek.UOID = 1;
+Lowtek.GUID = 1;
 
 Lowtek.debug = function() {
     if (Lowtek.DEBUG) {
@@ -10,8 +10,8 @@ Lowtek.debug = function() {
     }
 };
 
-Lowtek.nextUOID = function(objectType) {
-    return objectType +"#"+ Lowtek.UOID++;
+Lowtek.nextGUID = function() {
+    return Lowtek.GUID++;
 };
 
 Lowtek.util.ns = function() {
